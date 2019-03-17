@@ -1,0 +1,32 @@
+The top 10 tweets that have the maximum retweet: 
+
+
+ Tweet: "@brendandburns: Really excited to see @microsoft open source accessibility insights, simple tools to make your application more accessib…"  
+
+
+ Tweet: "@IGN: Microsoft has updated its Wireless Display app and it now allows for PC games to be directly streamed to an Xbox One.https://t.c…"  
+
+
+ Tweet: "@IGN: Microsoft has updated its Wireless Display app and it now allows for PC games to be directly streamed to an Xbox One.https://t.c…"  
+
+
+ Tweet: "@thezdi: In a new guest blog, @mwulftange provides details on CVE-2019-0604 - an RCE in #Microsoft #SharePoint. He describes how he foun…"  
+
+
+ Tweet: "@Wario64: The article states that Microsoft is open to Xbox Live on PS4 as well if Sony is willing to allow it but we all know it won't…"  
+
+
+ Tweet: "@thezdi: In a new guest blog, @mwulftange provides details on CVE-2019-0604 - an RCE in #Microsoft #SharePoint. He describes how he foun…"  
+
+
+ Tweet: "@edurekaIN: What is the eligibility criteria to take up the Microsoft Azure certification training?Click here for hints:https://t.co/PY…"  
+
+
+ Tweet: "@adrianzenz: Revealed: Microsoft has partnered with SenseNet, a surveillance firm which monitors China’s Muslims https://t.co/XfmDz3XmgQ…"  
+
+
+ Tweet: "@adrianzenz: Revealed: Microsoft has partnered with SenseNet, a surveillance firm which monitors China’s Muslims https://t.co/XfmDz3XmgQ…"  
+
+
+ Tweet: "@adrianzenz: Revealed: Microsoft has partnered with SenseNet, a surveillance firm which monitors China’s Muslims https://t.co/XfmDz3XmgQ…"  
+
