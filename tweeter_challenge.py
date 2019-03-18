@@ -1,18 +1,14 @@
 
 # coding: utf-8
 
-# In[11]:
+# In[2]:
 
 
 import string
 import operator
 import sys
 
-def TopTweets():
-    INPUT_FILE = input("Enter input file path: ")
-    INPUT_FILE_PATH = INPUT_FILE+ '.txt'
-    Count=input("Enter number of users who tweeted most: ")
-    N=int(Count)
+def TopTweets(INPUT_FILE_PATH,Count,N):
     with open (INPUT_FILE_PATH, encoding = "utf-8") as file:
         tweets=file.readlines()
     lst = {}
@@ -31,17 +27,8 @@ def TopTweets():
         outputFile.write("User Name: " + lst[i][0] + " and Number of tweets: " + str(lst[i][1]) + "\n")
         
     outputFile.close
-TopTweets()
 
-
-# In[12]:
-
-
-def MaxFollowers():
-    INPUT_FILE = input("Enter input file path: ")
-    INPUT_FILE_PATH = INPUT_FILE+ '.txt'
-    Count=input("Enter number of users who tweeted most: ")
-    N=int(Count)
+def MaxFollowers(INPUT_FILE_PATH,Count,N):
     with open (INPUT_FILE_PATH, encoding = "utf-8") as file:
         tweets=file.readlines()
 
@@ -59,17 +46,9 @@ def MaxFollowers():
     for i in range (0, N):
         outputFile.write(str(i+1) + ". Username: " + lst[i][0] + " : Number of Followers: " + str(lst[i][1]) + "\n\n")
     outputFile.close
-MaxFollowers()
 
 
-# In[13]:
-
-
-def TweetPerHour():
-    INPUT_FILE = input("Enter input file path: ")
-    INPUT_FILE_PATH = INPUT_FILE+ '.txt'
-    Count=input("Enter number of max follower: ")
-    N=int(Count)
+def TweetPerHour(INPUT_FILE_PATH,Count,N):
     
     with open (INPUT_FILE_PATH, encoding = "utf-8") as file:
         tweets=file.readlines()
@@ -112,18 +91,8 @@ def TweetPerHour():
                 
                 mSearch-=1
     outputFile.close
-TweetPerHour()
 
-
-# In[14]:
-
-
-
-def retweetCount():
-    INPUT_FILE = input("Enter input file path: ")
-    INPUT_FILE_PATH = INPUT_FILE+ '.txt'
-    Count=input("Enter number of retweets: ")
-    N=int(Count)
+def retweetCount(INPUT_FILE_PATH,Count,N):
     
     with open (INPUT_FILE_PATH, encoding = "utf-8") as file:
         tweets=file.readlines()
@@ -149,5 +118,52 @@ def retweetCount():
         outputFile.write("\n Tweet: " +
                       lst[x][0].split("::::;::::")[0]  + "\n\n")
     outputFile.close
-retweetCount()
+
+
+INPUT_FILE = input("Enter input file path: ")
+INPUT_FILE_PATH = INPUT_FILE+ '.txt'
+Count=input("Enter number of users who tweeted most: ")
+N=int(Count)
+
+TopTweets(INPUT_FILE_PATH,Count,N)
+MaxFollowers(INPUT_FILE_PATH,Count,N)
+TweetPerHour(INPUT_FILE_PATH,Count,N)
+retweetCount(INPUT_FILE_PATH,Count,N)
+
+
+# In[23]:
+
+
+import tweepy       
+import pandas as pd     
+import numpy as np      
+from textblob import TextBlob
+
+def SentimentAnalysis(INPUT_FILE_PATH):
+    tweets_all = []
+    with open (INPUT_FILE_PATH, encoding = "utf-8") as file:
+        tweets=file.readlines()
+    lst = {}
+    for line in tweets:       
+        fileTmp = line.split('"')
+        tweets_all.append(fileTmp[1])
+    #print(tweets_all)
+   
+    outputFile = open('C:/Users/shrav/Documents/Python Scripts/SentimentResult.txt', 'w', encoding = "utf-8")
+    
+    for tweet in tweets_all:
+        #print(tweet.text)
+        analysis = TextBlob(tweet)
+        #print(analysis.sentiment)
+        if analysis.sentiment[0]>0:
+             outputFile.write( 'Sentiment Result: Positive ' +'"'+tweet+'"'+"\n\n")
+        elif analysis.sentiment[0]<0:
+            outputFile.write( 'Sentiment Result: Negative '+'"'+tweet+'"'+"\n\n")
+        else:
+            outputFile.write( 'Sentiment Result: Neutral '+'"'+tweet+'"'+"\n\n")
+    outputFile.close
+    
+INPUT_FILE = input("Enter input file path: ")
+INPUT_FILE_PATH = INPUT_FILE+ '.txt'
+SentimentAnalysis(INPUT_FILE_PATH)
 
